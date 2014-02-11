@@ -11,9 +11,10 @@ package "chef-server" do
   source "/tmp/chef-server.rpm"
 end
 
-execute "run runsvdir" do
-  command "/opt/chef-server/embedded/bin/runsvdir -P -P /opt/chef-server/service" 
-end
+## Run this if you're using an Amazon AMI
+#execute "run runsvdir" do
+  #command "/opt/chef-server/embedded/bin/runsvdir -P -P /opt/chef-server/service" 
+#end
 
 ## configure the server
 execute "chef-server-ctl reconfigure" do
